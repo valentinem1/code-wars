@@ -15,27 +15,19 @@
 Math.round = function(number) {
     let arrNum = number.toString().split('')
 
-    if(arrNum[arrNum.indexOf('.')+1] >= 5 && arrNum[arrNum.indexOf('.')]){
-        return parseInt(number+1)
-    }else{
-        return parseInt(number)
-    }
+    return arrNum[arrNum.indexOf('.')+1] >= 5 && arrNum[arrNum.indexOf('.')] ? parseInt(number) + 1 : parseInt(number)
 };
 console.log(Math.round(5), 5)
 console.log(Math.round(4.9999), 5)
 
 Math.ceil = function(number) {
-    if(number % 1 !== 0){
-        return parseInt(number+1)
-    }return number
+    return number % 1 !== 0 ? parseInt(number+1) : number
 };
 console.log(Math.ceil(0.4), 1)
 console.log(Math.ceil(2.6), 3)
 
 Math.floor = function(number) {
-    if(number % 1 !== 0){
-        return parseInt(number)
-    } return number
+    return parseInt(number)
 };
 console.log(Math.floor(3.3), 3)
 console.log(Math.floor(2), 2)
